@@ -1,0 +1,51 @@
+name: Glass Patcher build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          # The embedded JVMs are assembled with 17 and 25; 21 runs Gradle.
+          java-version: |
+            17
+            25
+            21
+
+      - name: Ensure Android SDK platform
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          if [ ! -d "$ANDROID_HOME/platforms/android-37" ]; then
+            yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+            "$SDKMANAGER" "platforms;android-37" "build-tools;37.0.0"
+          fi
+
+      - name: Write package credentials
+        run: |
+          cat > local.properties <<EOF
+          gpr.user=${{ github.actor }}
+          gpr.key=${{ secrets.MORPHE_PACKAGES_TOKEN }}
+          EOF
+
+      - name: Build release APK
+        run: ./gradlew :app:assembleRelease -PnoProguard -PsignAsDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: glass-patcher-apk
+          path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: error

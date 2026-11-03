@@ -54,7 +54,7 @@ class PreferencesManager(
 ) : BasePreferencesManager(context, "settings") {
 
     // Appearance tab
-    val backgroundType = enumPreference("background_type", BackgroundType.CIRCLES)
+    val backgroundType = enumPreference("background_type", BackgroundType.DEFAULT)
     val enableBackgroundParallax = booleanPreference("enable_background_parallax", true)
     val randomBackgroundInterval = enumPreference("random_background_interval", RandomInterval.ON_LAUNCH)
 
@@ -88,7 +88,7 @@ class PreferencesManager(
     val customThemeColor = stringPreference("custom_theme_color", "")
     val appCardColorMode = enumPreference("app_card_color_mode", AppCardColorMode.DEFAULT)
     val customAppCardColors = stringPreference("custom_app_card_colors", "")
-    val theme = enumPreference("theme", Theme.SYSTEM)
+    val theme = enumPreference("theme", Theme.DARK)
     val themeStyle = enumPreference("theme_style", ThemeStyle.MORPHE)
 
     /** Display scale of the whole interface, applied on top of the system screen zoom. */

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:574971415597:android:5acf99d4cc8260eedc7ca4",
         "android_client_info": {
-          "package_name": "app.morphe.manager"
+          "package_name": "dev.panxcz.glasspatcher"
         }
       },
       "oauth_client": [],
@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:574971415597:android:5acf99d4cc8260eedc7ca4",
         "android_client_info": {
-          "package_name": "app.morphe.manager.debug"
+          "package_name": "dev.panxcz.glasspatcher.debug"
         }
       },
       "oauth_client": [],

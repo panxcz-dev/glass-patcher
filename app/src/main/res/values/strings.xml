@@ -695,7 +695,7 @@ Uninstalling will permanently erase all app data"</string>
     <string name="patcher_option_paths_rejected_title">Patch option files cannot be used</string>
     <string name="patcher_option_paths_rejected_description">One or more patch options point to files that are missing or do not have what the patch asks for. Remove the paths to patch without them, or fix the files as the option instructions describe and try again</string>
     <string name="patcher_option_paths_clear">Remove the paths and continue</string>
-    <string name="patcher_storage_permission_hint">Tip: Move files to /Android/data/app.morphe.manager/files/ - no extra permissions needed</string>
+    <string name="patcher_storage_permission_hint">Tip: Move files to /Android/data/dev.panxcz.glasspatcher/files/ - no extra permissions needed</string>
 
     <!-- Patcher Screen - Patcher Steps -->
     <string name="patcher_step_group_preparing">Preparing</string>
@@ -828,6 +828,7 @@ Uninstalling will permanently erase all app data"</string>
     <!-- Settings - Appearance Tab - Background animation -->
     <string name="settings_appearance_background">Background animation</string>
     <string name="settings_appearance_background_description">The animation that plays behind the app\'s screens</string>
+    <string name="settings_appearance_background_glass">Glass</string>
     <string name="settings_appearance_background_circles">Circles</string>
     <string name="settings_appearance_background_rings">Rings</string>
     <string name="settings_appearance_background_mesh">Mesh</string>
@@ -863,7 +864,7 @@ Uninstalling will permanently erase all app data"</string>
     <string name="settings_appearance_dynamic">Material You</string>
     <string name="settings_appearance_monochrome">Monochrome</string>
     <string name="settings_appearance_color_style">Color style</string>
-    <string name="settings_appearance_style_morphe" translatable="false">Morphe</string>
+    <string name="settings_appearance_style_morphe" translatable="false">Glass</string>
     <string name="settings_appearance_accent_color">Accent color</string>
     <string name="settings_appearance_pure_black">Pure Black</string>
     <string name="settings_appearance_pure_black_description">Uses true black backgrounds</string>
@@ -1216,7 +1217,7 @@ Details: %2$s"</string>
     <string name="settings_system_export_keystore_failed">Failed to export keystore</string>
     <string name="settings_system_show_password_field">Show password</string>
     <string name="settings_system_hide_password_field">Hide password</string>
-    <string name="settings_system_morphe_settings">Morphe settings</string>
+    <string name="settings_system_morphe_settings">Glass Patcher settings</string>
     <string name="settings_system_import_manager_settings_description">Backs up and restores your Morphe settings</string>
     <string name="settings_system_import_manager_settings_fail">Failed to import Morphe settings: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe settings imported</string>
@@ -1388,7 +1389,7 @@ Details: %2$s"</string>
     <string name="easter_egg_pill_blue_toast_again">Unplugged. The way back is where it always was</string>
 
     <!-- Shared strings -->
-    <string name="app_name" translatable="false">Morphe</string>
+    <string name="app_name" translatable="false">Glass Patcher</string>
     <string name="select_file">Select file</string>
     <string name="select_files">Select files</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->

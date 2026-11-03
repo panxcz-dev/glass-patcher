@@ -20,6 +20,7 @@ import app.morphe.manager.ui.theme.SeasonalEvent
  * Types of animated backgrounds available in the app.
  */
 enum class BackgroundType(val displayNameResId: Int) {
+    GLASS(R.string.settings_appearance_background_glass),
     CIRCLES(R.string.settings_appearance_background_circles),
     RINGS(R.string.settings_appearance_background_rings),
     MESH(R.string.settings_appearance_background_mesh),
@@ -36,7 +37,7 @@ enum class BackgroundType(val displayNameResId: Int) {
     RANDOM(R.string.settings_appearance_background_random);
 
     companion object {
-        val DEFAULT = CIRCLES
+        val DEFAULT = GLASS
 
         /** Types the picker keeps out of sight until they are unlocked. */
         val HIDDEN: Set<BackgroundType> = setOf(MATRIX)
@@ -91,6 +92,12 @@ fun AnimatedBackground(
             .clipToBounds()
     ) {
         when (effectiveType) {
+            BackgroundType.GLASS -> GlassBackground(
+                modifier = Modifier.fillMaxSize(),
+                enableParallax = enableParallax,
+                speedMultiplier = resolvedSpeed,
+                patchingCompleted = resolvedPatchingCompleted
+            )
             BackgroundType.CIRCLES -> CirclesBackground(
                 modifier = Modifier.fillMaxSize(),
                 enableParallax = enableParallax,

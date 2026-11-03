@@ -246,7 +246,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "app.morphe.manager"
+        applicationId = "dev.panxcz.glasspatcher"
         minSdk = 26
 
         versionName = version.toString()
